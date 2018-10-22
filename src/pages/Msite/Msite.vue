@@ -42,8 +42,32 @@
         </div>
       </div>
       <!--上新制造商-->
-      <div class="sx-wrap">
-        <ul class="sx-list">
+      <div class="sx-wrap clearFix">
+        <ul class="sx-list ">
+          <li class="sx-item">
+          <div>
+            <h4 class="sx-global">海外制造商</h4>
+            <span class="sx-price">9.9元起</span>
+            <i class="iconfont icon-31shangxin"></i>
+          </div>
+          <img class="sx-img" src="http://yanxuan.nosdn.127.net/8d670dfdf89315316160266b9a81f68a.png?imageView&thumbnail=355x0&quality=65" alt="logo">
+        </li>
+          <li class="sx-item">
+            <div>
+              <h4 class="sx-global">海外制造商</h4>
+              <span class="sx-price">9.9元起</span>
+              <i class="iconfont icon-31shangxin"></i>
+            </div>
+            <img class="sx-img" src="http://yanxuan.nosdn.127.net/5aecffba9202b1fa956758dfbcd65b85.png?imageView&thumbnail=355x0&quality=65" alt="logo">
+          </li>
+          <li class="sx-item">
+            <div>
+              <h4 class="sx-global">海外制造商</h4>
+              <span class="sx-price">9.9元起</span>
+              <i class="iconfont icon-31shangxin"></i>
+            </div>
+            <img class="sx-img" src="http://yanxuan.nosdn.127.net/8d670dfdf89315316160266b9a81f68a.png?imageView&thumbnail=355x0&quality=65" alt="logo">
+          </li>
           <li class="sx-item">
             <div>
               <h4 class="sx-global">海外制造商</h4>
@@ -166,21 +190,35 @@
 
     .sx-wrap
       width 100%
+
       .sx-list
         margin 0 (16/$rem)
+
         .sx-item
+          position relative
+          background #fff
+          height (236/$rem)
+          width (355/$rem)
+          float left
+          margin-right (4/$rem)
+          margin-bottom (4/$rem)
           div
             width (335/$rem)
             height (115/$rem)
+            margin-top  (20/$rem)
+            margin-left (20/$rem)
             .sx-global
-              font-size (33/$rem)
+              font-size (30/$rem)
             .sx-price
-              font-size (34/$rem)
+              font-size (30/$rem)
             .iconfont
               font-size (30/$rem)
           .sx-img
             width (355/$rem)
             height (236/$rem)
+            position absolute
+            left 0
+            top (10/$rem)
 
 
 
