@@ -3,15 +3,11 @@
     <div class="m-topBar">
       <div class="bd">
         <div class="row">
-          <i class="shouye iconfont icon-shouye-xianxing"></i>
-          <i class="logo"></i>
+          <i class="shouye iconfont icon-shouye-xianxing" @click="$router.replace('/msite')"></i>
+          <span class="logo-text">网易严选</span>
           <div class="right">
-            <div class="search" >
-              <i class="search1 iconfont icon-search"></i>
-            </div>
-            <div class="cart">
-              <i class="cart1 iconfont icon-caigou-xianxing"></i>
-            </div>
+              <i class="search1 iconfont icon-search" @click="searchshop"></i>
+              <i class="cart1 iconfont icon-caigou-xianxing" @click="$router.replace('/shopcart')"></i>
           </div>
         </div>
       </div>
@@ -19,108 +15,43 @@
   </div>
 </template>
 <script>
+  import { MessageBox } from 'mint-ui';
   export default {
-    name:"ShiwuList",
+
     data() {
       return {}
+    },
+    methods:{
+      searchshop(){
+        MessageBox('提示', '搜索成功');
+      }
     }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixins.styl"
-  .m-topBar{
-    position: fixed;
-    top: 0;
-    z-index: 99;
-    .bd{
-      height: (1.16*75/$rem);
-      background-color: #fafafa;
-      position: relative;
-      .row{
-        background-color: #fafafa;
-        z-index: 1;
-        width: (10*75/$rem);
-        margin: auto;
-        overflow: hidden;
-        padding: (10*75/$rem) (10*75/$rem);
-        height: (10*75/$rem);
-        display: flex;
-        -webkit-box-align: center;
-        align-items: center;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        position: relative;
-        .shouye{
-          width: (10*75/$rem);
-          height: (10*75/$rem);
-          background-position: (10*75/$rem);
-          display: inline-block;
-          vertical-align: middle;
-          background-image: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/hd-s342878591a-9af1a97852.png);
-          background-repeat: no-repeat;
-          background-size:( 2.29333*75/$rem) (5.30667*75/$rem);
-          cursor: pointer;
-        }
-        .logo{
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          margin: auto;
-          width: (2.29333*75/$rem);
-          height: (.72*75/$rem);
-          background-position: 0 (-1.70667*75/$rem);
-          display: inline-block;
-          vertical-align: middle;
-          background-image: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/hd-s342878591a-9af1a97852.png);
-          background-repeat: no-repeat;
-          background-size: (2.29333*75/$rem) (5.30667*75/$rem);
-          font-style: normal;
-        }
-        .right{
-          width: 20%;
-          margin-left: auto;
-          margin-right: (.6*75/$rem);
-          margin-top: (-.2*75/$rem);
-          .search{
-            margin-right: (.26667*75/$rem);
-            text-decoration: none;
-            outline: 0;
-            cursor: pointer;
-            float: left;
-            .search1{
-              position: relative;
-              bottom: 0;
-              width: (.26667*75/$rem);
-              height: (.26667*75/$rem);
-              background-position: 0 (.26667*75/$rem);
-              display: inline-block;
-              vertical-align: middle;
-              background-image: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/hd-s342878591a-9af1a97852.png);
-              background-repeat: no-repeat;
-              background-size: (.26667*75/$rem) (.26667*75/$rem);
-              font-style: normal;
-              cursor: pointer;
-            }
-          }
-          .cart{
-            .cart1{
-              cursor: pointer;
-              position: relative;
-              width: .85333*75/$rem;
-              height: .85333*75/$rem;
-              background-position: 0 0;
-              display: inline-block;
-              vertical-align: middle;
-              background-image: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/hd-s342878591a-9af1a97852.png);
-              background-repeat: no-repeat;
-              background-size: 2.29333*75/$rem 5.30667*75/$rem;
-              font-style: normal;
-            }
-          }
-        }
-      }
-    }
-  }
+  .m-topBar
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height (87/$rem)
+    background #eee
+    z-index 10
+    .row
+      height 100%
+      padding-left (24/$rem)
+      padding-right (16/$rem)
+      .shouye
+        font-size (60/$rem)
+      .logo-text
+        font-size (40/$rem)
+        padding-left (180/$rem)
+      .right
+        float right
+        .search1
+          font-size (60/$rem)
+        .cart1
+          font-size (60/$rem)
+
 </style>

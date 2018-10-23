@@ -10,7 +10,8 @@ import WangyiGuide from './components/wangyiGuide/wangyiGuide'
 
 export default {
   components: {
-    WangyiGuide
+    WangyiGuide,
+
   }
 }
 </script>
