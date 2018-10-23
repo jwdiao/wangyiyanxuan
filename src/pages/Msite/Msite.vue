@@ -42,8 +42,8 @@
         </div>
       </div>
       <!--上新制造商-->
-      <div class="sx-wrap clearFix">
-        <ul class="sx-list ">
+      <div class="sx-wrap">
+        <ul class="sx-list clearFix">
           <li class="sx-item">
           <div>
             <h4 class="sx-global">海外制造商</h4>
@@ -66,7 +66,39 @@
               <span class="sx-price">9.9元起</span>
               <i class="iconfont icon-31shangxin"></i>
             </div>
+            <img class="sx-img" src="http://yanxuan.nosdn.127.net/f57d460dde6e737f2bacd9f67cb73a41.png?imageView&thumbnail=355x0&quality=65" alt="logo">
+          </li>
+          <li class="sx-item">
+            <div>
+              <h4 class="sx-global">海外制造商</h4>
+              <span class="sx-price">9.9元起</span>
+              <i class="iconfont icon-31shangxin"></i>
+            </div>
             <img class="sx-img" src="http://yanxuan.nosdn.127.net/8d670dfdf89315316160266b9a81f68a.png?imageView&thumbnail=355x0&quality=65" alt="logo">
+          </li>
+          <li class="sx-item">
+            <div>
+              <h4 class="sx-global">海外制造商</h4>
+              <span class="sx-price">9.9元起</span>
+              <i class="iconfont icon-31shangxin"></i>
+            </div>
+            <img class="sx-img" src="http://yanxuan.nosdn.127.net/8d670dfdf89315316160266b9a81f68a.png?imageView&thumbnail=355x0&quality=65" alt="logo">
+          </li>
+          <li class="sx-item">
+            <div>
+              <h4 class="sx-global">海外制造商</h4>
+              <span class="sx-price">9.9元起</span>
+              <i class="iconfont icon-31shangxin"></i>
+            </div>
+            <img class="sx-img" src="http://yanxuan.nosdn.127.net/5aecffba9202b1fa956758dfbcd65b85.png?imageView&thumbnail=355x0&quality=65" alt="logo">
+          </li>
+          <li class="sx-item">
+            <div>
+              <h4 class="sx-global">海外制造商</h4>
+              <span class="sx-price">9.9元起</span>
+              <i class="iconfont icon-31shangxin"></i>
+            </div>
+            <img class="sx-img" src="http://yanxuan.nosdn.127.net/f57d460dde6e737f2bacd9f67cb73a41.png?imageView&thumbnail=355x0&quality=65" alt="logo">
           </li>
           <li class="sx-item">
             <div>
@@ -87,6 +119,7 @@
   import NavBar from '../../components/navBar/navBar'
   import Swiper from 'swiper'
   import {mapState} from 'vuex'
+  import BScroll from 'better-scroll'
   export default {
     components:{
       NavBar
@@ -97,6 +130,7 @@
 
     computed:{
       ...mapState(['banner'])
+
     },
     watch:{
       banner(){
@@ -105,9 +139,10 @@
             loop: true,
             autoplay: {
               autoplay:true,
-            },
+            }
           })
         })
+
       }
     },
   }
@@ -115,9 +150,13 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixins.styl"
   .nav
-    /*width (750/$rem)*/
+    width (750/$rem)
     height (150/$rem)
     background #fff
+    z-index: 2
+    position fixed
+    top 0
+    left 0
     .nav-title
       .nav-logo
         width: (138/$rem)
@@ -139,18 +178,18 @@
   .scrollUpDown
     width 100%
     height 100%
+    margin-top (153/$rem)
+    padding-bottom (98/$rem)
     .swiper-container
       border-top 5px solid #eee
+      margin-top (3/$rem)
       .swiper-wrapper
         display: flex
+        /*margin-top (2/$rem) solid #fff*/
         .swiper-slide
           width 100%
           img
             height (400/$rem)
-
-
-
-
     .g-grow
       width: 100%;
       margin-bottom (12/$rem)
@@ -190,13 +229,15 @@
 
     .sx-wrap
       width 100%
-
+      height (476/$rem)
+      background #fff
       .sx-list
         margin 0 (16/$rem)
+        height (468/$rem)
 
         .sx-item
           position relative
-          background #fff
+          background #eee
           height (236/$rem)
           width (355/$rem)
           float left
