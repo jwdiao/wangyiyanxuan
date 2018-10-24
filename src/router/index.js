@@ -6,6 +6,8 @@ import Know from '../pages/Know/Know'
 import Msite from '../pages/Msite/Msite'
 import Profile from '../pages/Profile/Profile'
 import Shopcart from '../pages/Shopcart/Shopcart'
+import Loginroute from '../pages/LoginRoute/LoginRoute'
+import Cover from '../pages/Cover/Cover'
 
 Vue.use(vueRouter)
 
@@ -13,27 +15,40 @@ export default new vueRouter({
   routes:[
     {
       path:'/msite',
-      component:Msite
+      component:Msite,
+      meta:{show:true}
     },
     {
       path:'/class',
-      component:Class
+      component:Class,
+      meta:{show:true}
     },
     {
       path:'/know',
-      component:Know
+      component:Know,
+      meta:{show:true}
     },
     {
       path:'/profile',
       component:Profile
+
     },
     {
       path:'/shopcart',
-      component:Shopcart
+      component:Shopcart,
+      meta:{show:true}
+    },
+    {
+      path:'/cover',
+      component:Cover,
+    },
+    {
+      path:'/loginroute',
+      component:Loginroute
     },
     {
       path:'/',
-      redirect:'/msite'
+      redirect:'/cover'
     },
   ]
 })

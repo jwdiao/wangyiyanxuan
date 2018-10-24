@@ -18,7 +18,7 @@
 
 export default {
     props:{
-      activeIndex:Function
+      activeIndex:0
     },
   components:{
     LeftNavBar,

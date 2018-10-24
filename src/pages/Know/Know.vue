@@ -5,7 +5,7 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item,index) in detail.banner" :key="index">
-            <img :src="item.picUrl">
+            <img  class="swiper-slide-img" :src="item.picUrl">
            </div>
         </div>
       </div>
@@ -59,16 +59,19 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixins.styl"
-  .swiper-container
-    margin-top (110/$rem)
-    .swiper-wrapper
-      display: flex
-      .swiper-slide
-        width 100%
-        img
+  body
+    background #eee
+    .swiper-container
+      margin-top (110/$rem)
+      .swiper-wrapper
+        display: flex
+        .swiper-slide
+          width 100%
 
-          height (400/$rem)
-          border-radius (20/$rem)
+          .swiper-slide-img
+            margin 0 (-20/$rem)
+            height (400/$rem)
+            border-radius (20/$rem)
 
 
 

@@ -2,11 +2,15 @@ import {
   reqBanner,
   reqDetail,
   reqClassify,
+  reqHomeDate,
 } from "../api";
 import {
   REQ_BANNER,
   REQ_DETAIL,
-  REQ_CLASSIFY
+  REQ_CLASSIFY,
+  REQ_LOGINWAY,
+  REQ_INDEX,
+  REQ_HOMEDATE,
 }from './mutation-types'
 
 export default {
@@ -28,5 +32,16 @@ export default {
     const classify = result.categoryL1List
     commit(REQ_CLASSIFY,{classify})
     cb && cb()
-  }
+  },
+  gteIsLoginWay({commit},isLoginWay){
+    commit(REQ_LOGINWAY,{isLoginWay})
+  },
+  getActiveIndex({commit},index){
+    commit(REQ_INDEX,{index})
+  },
+  async getHomeDate({commit},cb){
+    const result = await reqHomeDate()
+    const homeDate = result.home
+    commit(REQ_HOMEDATE,{homeDate})
+  },
 }

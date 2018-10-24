@@ -5,8 +5,8 @@
         <img src="http://yanxuan.nosdn.127.net/82cef264da1192ba26d6fc500386962f.jpg?imageView&thumbnail=0x196&quality=75" alt="">
       </div>
       <div class="shopList">
-        <ul class="shopItems">
-          <li v-for="(item,index) in classify[1].subCateList" :key="index">
+        <ul class="shopItems" v-if="classify.length">
+          <li v-for="(item,index) in classify[activeIndex].subCateList" :key="index">
             <div class="shopIcon">
               <img :src="item.bannerUrl" alt="">
             </div>
@@ -26,16 +26,11 @@
 
       }
     },
-    props:{
-      activeIndex:Function
-    },
-
     mounted(){
       this.$store.dispatch('getClassify')
-
     },
     computed:{
-      ...mapState(['classify'])
+      ...mapState(['classify','activeIndex'])
     },
   }
 </script>

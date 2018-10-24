@@ -7,23 +7,39 @@
             v-for="(nav,index) in navList" :key="index">{{nav}}</li>
       </ul>
     </div>
-
-
   </div>
 </template>
 <script>
   import BScroll from 'better-scroll'
+  import {mapState}from 'vuex'
 
   export default {
     data() {
       return {
         navList :["推荐专区","秋季专区","新品专区","爆品专区","居家","鞋包配饰","服装","电器","洗护","饮食","餐厨","婴童","文体"],
-        // activeIndex:0,//初始化点击时的数据索引
-        scrollX:0,
-        tops:[],
+        //activeIndex:0,//初始化点击时的数据索引
+        // scrollX:0,
+        // tops:[],
       }
     },
-   methods:{
+    methods:{
+      selectItem(index){
+
+        this.$store.dispatch('getActiveIndex',index)
+      }
+    },
+    computed:{
+      ...mapState(['activeIndex'])
+    },
+
+    mounted(){
+     /* new BScroll('.nav-scrollY',{
+        click:true,
+        scrollY:true,
+        scrollX:false
+      })*/
+    }
+ /*  methods:{
 
      _initScroll () {
        // 左侧列表滚动对象
@@ -66,7 +82,6 @@
      },
    },
     computed:{
-
       activeIndex () {
         const {scrollX, tops} = this
         // scrollY大于或等于当前top && 小于下一个top
@@ -85,7 +100,7 @@
       this._initScroll()
       // 初始化tops数据
       this._initTops()
-    },
+    },*/
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
