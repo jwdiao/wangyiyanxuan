@@ -14,6 +14,9 @@
     <detail-scroll :scroll="detail.column"/><!--代数据-->
     <!--为你推荐-->
     <detail-item-list :detail="detail"/>
+    <!--totop-->
+    <totop/>
+
   </div>
 </template>
 <script>

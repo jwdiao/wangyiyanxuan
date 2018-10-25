@@ -83,7 +83,7 @@
 
   export default {
     props:{
-      detail:Object
+      detail:{}
     }
 
   }

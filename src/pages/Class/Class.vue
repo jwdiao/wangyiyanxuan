@@ -11,6 +11,7 @@
       <!--rightNav-->
       <right-nav-bar :activeIndex="activeIndex"/>
     </div>
+
   </div>
 </template>
 <script>

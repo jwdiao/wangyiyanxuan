@@ -43,14 +43,14 @@
       </div>
       <!--上新制造商-->
       <div class="sx-wrap">
-        <ul class="sx-list clearFix" v-if="homeDateFilter.length">
+        <ul class="sx-list clearFix">
           <li class="sx-item" v-for="(item,index) in homeDateFilter" :key="index">
             <div>
               <h4 class="sx-global">{{item.name}}</h4>
               <span class="sx-price">{{item.floorPrice}}元起</span>
               <i class="iconfont icon-31shangxin"></i>
             </div>
-            <img class="sx-img" :src="item.picUrl" alt="logo">
+            <img class="sx-img" v-lazy="item.picUrl" alt="logo">
           </li>
         </ul>
       </div>
@@ -64,8 +64,8 @@
           </div>
         </a>
         </header>
-        <div class="innerwrap-swiper">
-          <ul class="list-swiper">
+        <div class="innerwrap-swiper" ref="home">
+          <ul class="list-swiper" >
             <li class="item-swiper" v-for="(item,index) in itemHomeDate.itemList" :key="index">
               <a href="javascript:;">
                 <div class="swiper-img">
@@ -86,6 +86,8 @@
       </div>
 
     </div>
+    <!--totop-->
+    <totop/>
   </div>
 </template>
 <script>
@@ -105,32 +107,54 @@
 
     computed: {
       ...mapState(['banner', 'homeDate']),
-      ...mapGetters(['homeDateFilter'])
+
+      homeDateFilter (state) {
+        if (state.homeDate.tagList) {
+          return state.homeDate.tagList.filter((item, index) => index < 4)
+        } else {
+              return []
+          }
+        }
 
     },
+
+
     watch: {
-      banner() {
-        this.$nextTick(() => {
-          new Swiper('.swiper-container', {
-            loop: true,
-            autoplay: {
-              autoplay: true,
-            }
-          })
-        })
-
-      },
-      homeDate(){
-
+        banner() {
           this.$nextTick(() => {
-            new BScroll('.innerwrap-swiper', {
-              click : true,
-              scrollX : true
+            new Swiper('.swiper-container', {
+              loop: true,
+              autoplay: {
+                autoplay: true,
+              }
             })
           })
 
+        },
+
+        homeDate() {
+          //获取遍历后的滑动div,需要加载更新后
+          this.$nextTick(() =>{
+            const lis = this.$refs.home
+            lis.forEach(item => {
+              //遍历li加载到的li的图片
+              this.$nextTick(() => {
+                new BScroll(item, {
+                  click: true,
+                  scrollX: true
+                })
+              })
+            })
+
+          })
+
+
+
+
+
+        }
       }
-    },
+
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
@@ -277,15 +301,16 @@
             font-size (30/$rem)
             background #D8E5F1
         .innerwrap-swiper
-          width (750/$rem)
-          height (460/$rem)
+          width 100%
+          height (450/$rem)
+          display flex
           .list-swiper
             display flex
+
             .item-swiper
-              width (270/$rem)
+              width (350/$rem)
               height (400/$rem)
               margin-left (10/$rem)
-
               a
                 width 100%
                 height 100%

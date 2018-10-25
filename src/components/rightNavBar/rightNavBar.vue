@@ -1,8 +1,8 @@
 <template>
   <div class="rightNavBar">
     <div class="rightWrap">
-      <div class="headerImg">
-        <img src="http://yanxuan.nosdn.127.net/82cef264da1192ba26d6fc500386962f.jpg?imageView&thumbnail=0x196&quality=75" alt="">
+      <div class="headerImg" v-if="classify.length">
+        <img v-lazy="classify[activeIndex].bannerUrl" alt="">
       </div>
       <div class="shopList">
         <ul class="shopItems" v-if="classify.length">
@@ -42,6 +42,10 @@
     left (175/$rem)
     .headerImg
       margin (15/$rem) 0 0 (15/$rem)
+      img
+        width (500/$rem)
+        height (250/$rem)
+        margin-left (20/$rem)
     .shopList
       margin-left (30/$rem)
       margin-top (20/$rem)
