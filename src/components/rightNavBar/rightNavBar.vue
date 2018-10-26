@@ -8,7 +8,7 @@
         <ul class="shopItems" v-if="classify.length">
           <li v-for="(item,index) in classify[activeIndex].subCateList" :key="index">
             <div class="shopIcon">
-              <img :src="item.bannerUrl" alt="">
+              <img v-lazy="item.bannerUrl" alt="">
             </div>
             <div class="shopText">{{item.name}}</div>
           </li>

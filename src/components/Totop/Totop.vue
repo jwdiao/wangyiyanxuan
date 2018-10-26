@@ -39,11 +39,12 @@
     }*/
     created(){
       var vm=this;
+
       window.onscroll=function(){
         if (document.documentElement.scrollTop>600) {
-          vm.isActive=false;
-        }else {
           vm.isActive=true;
+        }else {
+          vm.isActive=false;
         }
       }
     }
@@ -59,8 +60,9 @@
     bottom (130/$rem)
     right (30/$rem)
     z-index 100
+    display none
     &.on
-      display none
+      display block
     img
       width (100/$rem)
       height (100/$rem)

@@ -7,15 +7,15 @@
     <ul class="shouHou">
       <li>
         <i class="iconfont icon-du"></i>
-       <div> 30天无忧退货</div>
+       <span> 30天无忧退货</span>
       </li>
       <li>
         <i class="iconfont icon-du"></i>
-        <div>48小时快速退款</div>
+        <span>48小时快速退款</span>
       </li>
       <li>
         <i class="iconfont icon-du"></i>
-        <div>满88元免邮费</div>
+        <span>满88元免邮费</span>
       </li>
     </ul>
     <div class="logo">
@@ -53,13 +53,13 @@
       width 100%
       height (50/$rem)
       display flex
-      margin-left (40/$rem)
-      margin-top (30/$rem)
+      margin-left (20/$rem)
+      margin-top (5/$rem)
       li
         flex 1
         i
           font-size (30/$rem)
-        div
+        span
           font-size (25/$rem)
           color #999
 

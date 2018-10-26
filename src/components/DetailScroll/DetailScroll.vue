@@ -4,7 +4,7 @@
       <div class="scroll-wrap">
         <div class="scroll-item" v-for="(item,index) in scroll" :key="index">
           <div class="imgContainer">
-            <img :src="item.picUrl" alt="logo">
+            <img v-lazy="item.picUrl" alt="logo">
           </div>
           <div class="rbGradient">
             <div class="topNum">{{item.articleCount}}</div>
