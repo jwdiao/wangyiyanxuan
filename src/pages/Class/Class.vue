@@ -14,7 +14,7 @@
 
   </div>
 </template>
-<script>
+<script type="text/javascript">
   import LeftNavBar from '../../components/leftNavBar/leftNavBar'
 
 export default {

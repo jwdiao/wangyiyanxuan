@@ -33,7 +33,7 @@
     </div>
   </div>
 </template>
-<script>
+<script type="text/javascript">
   import {mapState}from 'vuex'
 export default {
   data(){

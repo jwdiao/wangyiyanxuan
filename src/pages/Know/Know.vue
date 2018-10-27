@@ -24,7 +24,7 @@
 
   </div>
 </template>
-<script>
+<script type="text/javascript">
   import {mapState}from 'vuex'
   import Swiper from 'swiper'
   // import ShiwuList from '../../components/shiwulist/shiwulist'

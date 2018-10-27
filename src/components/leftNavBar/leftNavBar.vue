@@ -9,7 +9,7 @@
     </div>
   </div>
 </template>
-<script>
+<script type="text/javascript">
   import BScroll from 'better-scroll'
   import {mapState}from 'vuex'
 

@@ -5,7 +5,7 @@ import VueLazyload from 'vue-lazyload'
 
 import app from './App'
 import router from './router'
-import  '../mock/mockServer'
+import './mock/mockServer'
 import store from './store'
 //注册全局组件
 import RightNavBar from './components/rightNavBar/rightNavBar'

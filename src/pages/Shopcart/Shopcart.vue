@@ -27,7 +27,7 @@
     </div>
   </div>
 </template>
-<script>
+<script type="text/javascript">
 
 </script>
 <style lang="stylus" rel="stylesheet/stylus">

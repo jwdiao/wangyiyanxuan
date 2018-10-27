@@ -14,7 +14,7 @@
     </div>
   </div>
 </template>
-<script>
+<script type="text/javascript">
   import { MessageBox } from 'mint-ui';
   export default {
 

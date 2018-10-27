@@ -88,7 +88,7 @@
   </div>
 
 </template>
-<script>
+<script type="text/javascript">
   import {mapState}from 'vuex'
   import {Toast, MessageBox} from 'mint-ui'
   export default {

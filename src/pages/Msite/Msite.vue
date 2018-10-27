@@ -106,7 +106,7 @@
     </div>
   </div>
 </template>
-<script>
+<script type="text/javascript">
   import NavBar from '../../components/navBar/navBar'
   import Swiper from 'swiper'
   import {mapState, mapGetters} from 'vuex'

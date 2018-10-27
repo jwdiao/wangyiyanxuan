@@ -16,7 +16,7 @@
     </div>
   </div>
 </template>
-<script>
+<script type="text/javascript">
   import BScroll from 'better-scroll'
   export default {
     data() {

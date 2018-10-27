@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/javascript">
 import WangyiGuide from './components/wangyiGuide/wangyiGuide'
 
 
